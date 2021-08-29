@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '16'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//libraryDependencies += "joda-time" % "joda-time" % "2.9.2"
+	implementation group: 'joda-time', name: 'joda-time', version: '2.9.2'
+	implementation 'org.springframework.data:spring-data-commons-core:1.4.1.RELEASE'
+	implementation 'org.springframework.data:spring-data-mongodb:1.7.2.RELEASE'
+}
+
+test {
+	useJUnitPlatform()
+}
